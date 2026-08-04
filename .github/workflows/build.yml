@@ -1,4 +1,3 @@
-
 name: Build Flappy Bird APK
 
 on:
@@ -23,7 +22,7 @@ jobs:
       - name: Install dependencies 📦
         run: |
           sudo apt update
-          sudo apt install -y git zip unzip openjdk-17-jdk python3-pip autoconf libtool pkg-config zlib1g-dev libncurses5-dev libncursesw5-dev cmake
+          sudo apt install -y git zip unzip openjdk-17-jdk python3-pip autoconf libtool libltdl-dev pkg-config zlib1g-dev libncurses5-dev libncursesw5-dev cmake build-essential
           pip install --upgrade buildozer cython
 
       - name: Build APK with Buildozer 🚀
