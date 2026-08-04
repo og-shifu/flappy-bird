@@ -11,16 +11,25 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout
+      - name: Checkout repository 📁
         uses: actions/checkout@v4
 
-      - name: Build APK
-  uses: Digreatbrian/buildozer-action@v1.0.0
-  with:
-    buildozer_version: stable
-    command: buildozer android debug
+      - name: Set up Python 🐍
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
 
-      - name: Upload APK
+      - name: Install dependencies 📦
+        run: |
+          sudo apt update
+          sudo apt install -y git zip unzip openjdk-17-jdk python3-pip autoconf libtool pkg-config zlib1g-dev libncurses5-dev libncursesw5-dev libcmake-dev cmake
+          pip install --upgrade buildozer cython
+
+      - name: Build APK with Buildozer 🚀
+        run: |
+          buildozer android debug
+
+      - name: Upload APK artifact 📤
         uses: actions/upload-artifact@v4
         with:
           name: FlappyBird-APK
