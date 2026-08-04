@@ -34,3 +34,7 @@ jobs:
         with:
           name: FlappyBird-APK
           path: bin/*.apk
+          
+      - name: Build APK with Buildozer 🚀
+        run: |
+          yes | buildozer android debug
