@@ -44,7 +44,9 @@ android.accept_sdk_license = True
 
 
 # Android API
-android.api = 35
+android.api = 34
+android.build_tools_version = 34.0.0
+
 
 # Minimum Android version
 android.minapi = 23
