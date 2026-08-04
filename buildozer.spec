@@ -39,6 +39,10 @@ warn_on_root = 1
 
 [android]
 
+# Automatically accept SDK license
+android.accept_sdk_license = True
+
+
 # Android API
 android.api = 35
 
